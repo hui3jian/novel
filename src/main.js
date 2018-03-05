@@ -3,8 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import MuseUi from 'muse-ui'
 
-Vue.config.productionTip = false
+import 'muse-ui/dist/muse-ui.css'
+import 'muse-ui/dist/theme-teal.css'
+import "@/assets/iconfont/iconfont.css"
+import '@/assets/css/style.css'
+import '@/assets/css/animate.min.css'
+
+Vue.use(MuseUi);
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
@@ -13,3 +21,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+

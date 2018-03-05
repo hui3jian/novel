@@ -1,0 +1,46 @@
+*{margin: 0;padding: 0;list-style: none; box-sizing: border-box;-moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box; /* Safari */}
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {margin: 0;padding: 0;}
+
+/** 设置默认字体 **/
+body,button, input, select, textarea /* for ie */ {font-size: 14px;font-family: 'LatoRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var, i, b, dl, dt, dd  { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; cursor: pointer}
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */ /* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; width: 100%; }
+
+/* 清除浮动 */
+.clear:after { content: '\20';display: block;height: 0;clear: both;}
+.clear {*zoom: 1;}
+
+
+html, body{font-size: 10px;}
+.padding0{padding: 0!important;}
+.pdt0{padding-top: 0!important;}
+.pdl0{padding-left: 0!important;}
+.pdr0{padding-right: 0!important;}
+.pdb0{padding-bottom: 0!important;}
+.margin0{margin: 0!important;}
+.mgt0{margin-top: 0!important;}
+.mgl0{margin-left: 0!important;}
+.mgr0{margin-right: 0!important;}
+.mgb0{margin-bottom: 0!important;}

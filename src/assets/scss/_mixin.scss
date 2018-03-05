@@ -1,0 +1,332 @@
+/*
+ *  Created: @ Ways
+ *  Website: http://dss.way-s.com/
+ *
+ *  ---------------------------------------
+ *  ------------- DSS --------------
+ *  ---------------------------------------
+ *
+ *  1.  浏览器前缀
+ *  2.  动画特效
+ *  3.  边框阴影
+ *  4.  字体调整
+ *  5.  框模型
+ *  6.  谷歌浏览器文字过长裁剪(带行数)
+ *  7.  单行文字过长显示'...'
+ *  8.  模块水平居中@垂直居中(定位)
+ *  9.  外框长&宽自适应（除浮动，定位）
+ *  10.  圆角(适应所有浏览器)
+ *  11.  清除浮动
+ *  12.  透明度
+ *  13.  正三角
+ *  14.  直角三角形
+ *  15.  <a>链接标签样式
+ *  16.  按钮样式
+ *  16.  calc计算
+ *
+ */
+
+//-----------------------------------1.浏览器前缀-----------------------------------------
+@mixin css3($property, $value) {
+  @each $prefix in -webkit-,
+  -moz-,
+  -ms-,
+  -o-,
+  '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+//-----------------------------------2.动画特效-----------------------------------------
+@mixin transition($x: all, $y: 0.2s, $z: ease-out, $k: 0s){
+  -moz-transition: $x $y $z $k;
+  -webkit-transition: $x $y $z $k;
+  -o-transition:$x $y $z $k;
+  transition: $x $y $z $k;
+}
+
+
+//-----------------------------------3.边框阴影-----------------------------------------
+@mixin box-shadow($x: 3px, $y: 3px, $z: 4px,  $shadowColor: #cccccc, $inset:outset) {
+  -moz-box-shadow: $x $y $z $shadowColor ; // FF3.5+
+  -webkit-box-shadow: $x $y $z $shadowColor ; // Saf3.0+, Chrome
+  box-shadow: $x $y $z $shadowColor ; // Opera 10.5, IE 9.0
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$shadowColor}');
+  /* IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$shadowColor}')";
+  /* IE8 */
+}
+
+
+//-----------------------------------4.字体调整-----------------------------------------
+@mixin font-adjust($x:14px, $y:14px, $k:#666, $z: center, $f:100){
+  font-size: $x;
+  line-height: $y;
+  color:$k;
+  text-align: $z;
+  font-weight: $f;
+}
+
+//-----------------------------------5.框模型-----------------------------------------
+@mixin box-Module
+(
+  $display:inline-block, $width: auto, $height: auto,$margin:0, $padding:0, $background:transparent, $border:none,$overflow:hidden
+)
+{
+  display: $display;
+  width: $width;
+  height: $height;
+  margin: $margin;
+  padding: $padding;
+  background: $background;
+  border: $border;
+  overflow: $overflow;
+}
+
+
+//-----------------------------------6.谷歌浏览器文字过长裁剪(带行数)-----------------------------------------
+@mixin google-text-hide($row:2)
+{
+  overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:$row;
+}
+
+//-----------------------------------7.单行文字过长显示'...'-----------------------------------------
+@mixin text-hide()
+{
+  white-space: nowrap; text-overflow: ellipsis;overflow: hidden;
+}
+
+
+//-----------------------------------8.模块水平居中@垂直居中-----------------------------------------
+@mixin box-center($width:null, $height:null, $position:absolute)
+{
+  display:block;
+  position: $position;
+  @if($width != null and $height == null){
+    width: $width;
+    left: 50%;
+    margin-left: -($width/2);
+  }
+  @if($height != null and $width == null){
+    height: $height;
+    top:50%;
+    margin-top: -($height/2);
+  }
+  @if($height != null and $width != null){
+    width: $width;left: 50%;margin-left: -($width/2); height: $height; top:50%;  margin-top: -($height/2);
+  }
+}
+
+
+//-----------------------------------9.外框长&宽自适应（除浮动，定位）-----------------------------------------
+@mixin adaptive(){
+  overflow: auto;overflow-x: hidden; overflow-y: hidden;
+}
+
+//-----------------------------------10.圆角(适应所有浏览器)-----------------------------------------
+//radius:圆角
+@mixin radius($num:1234, $size: 5px) {
+  @if $num==1234 {
+    -webkit-border-radius: $size; //Saf3+, Chrome
+    -moz-border-radius: $size; //FF1+
+    border-radius: $size; //Opera 10.5, IE 9
+    -ms-border-radius: $size;
+  }
+  @if $num==12 {
+    -webkit-border-top-left-radius: $size;
+    border-top-left-radius: $size;
+    -webkit-border-top-right-radius: $size;
+    border-top-right-radius: $size;
+    -moz-border-top-left-radius: $size;
+    -ms-border-top-left-radius: $size;
+    -moz-border-top-right-radius: $size;
+    -ms-border-top-right-radius: $size;
+  }
+  @if $num==23 {
+    -webkit-border-top-right-radius: $size;
+    border-top-right-radius: $size;
+    -webkit-border-bottom-right-radius: $size;
+    border-bottom-right-radius: $size;
+    -moz-border-top-right-radius: $size;
+    -moz-border-bottom-right-radius: $size;
+    -ms-border-top-right-radius: $size;
+    -ms-border-bottom-right-radius: $size;
+  }
+  @if $num==34 {
+    -webkit-border-bottom-right-radius: $size;
+    border-bottom-right-radius: $size;
+    -webkit-border-bottom-left-radius: $size;
+    border-bottom-left-radius: $size;
+    -moz-border-bottom-left-radius: $size;
+    -moz-border-bottom-right-radius: $size;
+    -ms-border-bottom-left-radius: $size;
+    -ms-border-bottom-right-radius: $size;
+  }
+  @if $num==14 {
+    -webkit-border-top-left-radius: $size;
+    border-top-left-radius: $size;
+    -webkit-border-bottom-left-radius: $size;
+    border-bottom-left-radius: $size;
+    -moz-border-top-left-radius: $size;
+    -moz-border-bottom-left-radius: $size;
+    -ms-border-top-left-radius: $size;
+    -ms-border-bottom-left-radius: $size;
+  }
+  @if $num==13 {
+    -webkit-border-top-left-radius: $size;
+    -webkit-border-bottom-right-radius: $size;
+    -ms-border-top-left-radius: $size;
+    -ms-border-bottom-right-radius: $size;
+    border-top-left-radiu: $size;
+    -moz-border-top-left-radius: $size;
+    border-bottom-right-radiu: $size;
+    -moz-border-bottom-right-radius: $size;
+  }
+  @if $num==24 {
+    -webkit-border-top-right-radius: $size;
+    border-top-right-radius: $size;
+    -webkit-border-bottom-left-radius: $size;
+    border-bottom-left-radius: $size;
+    -moz-border-top-right-radius: $size;
+    -moz-border-bottom-left-radius: $size;
+    -ms-border-top-right-radius: $size;
+    -ms-border-bottom-left-radius: $size;
+  }
+}
+
+//-----------------------------------11.清除浮动-----------------------------------------
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//-----------------------------------12.透明度-----------------------------------------
+@mixin opacity($opacity:50) {
+  opacity: $opacity;
+  -moz-opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//-----------------------------------13.正三角-----------------------------------------
+//正三角的通用属性
+%triangleBase {
+  _font-size: 0;
+  _line-height: 0;
+  _overflow: hidden;
+  width: 0;
+  height: 0;
+
+}
+//regulaTriangle:正三角(dashed默认透明)
+//例子：@include regulaTriangle(top,red);
+@mixin regulaTriangle($derection:bottom, $color: #000, $width: 20px) {
+  @extend %triangleBase;
+  border-width: $width;
+  //向右
+  @if $derection==right {
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $color;
+  }
+  //向左
+  @if $derection==left {
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $color transparent transparent;
+  }
+  //向上
+  @if $derection==top {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent $color transparent;
+  }
+  //向下
+  @if $derection==bottom {
+    border-style: solid dashed dashed dashed;
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+//-----------------------------------14.直角三角形-----------------------------------------
+//right-angledTriangle:直角三角形
+//例子：@include right-angledTriangle(1,red);
+@mixin right-angledTriangle ($derection:1, $color:#000, $width: 20px, $opacity:transparent, $border:dashed) {
+  @extend %triangleBase;
+  border-width: $width;
+  //向右
+  @if $derection==1 {
+    border-style: $border dashed dashed $border;
+    border-color: $color $opacity $opacity $color;
+  }
+  //向右
+  @if $derection==2 {
+    border-style: $border $border dashed dashed;
+    border-color: $color $color $opacity $opacity;
+  }
+  //向右
+  @if $derection==3 {
+    border-style: dashed $border $border dashed;
+    border-color: $opacity $color $color $opacity;
+  }
+  //向右
+  @if $derection==4 {
+    border-style: dashed dashed $border $border;
+    border-color: $opacity $opacity $color $color;
+  }
+}
+
+
+//-----------------------------------15.<a>链接标签样式-----------------------------------------
+@mixin a-style($color:#0080c1, $hover-color:#f04048, $underLine:underline){
+  color: $color;
+  text-decoration: none;
+  &:hover{
+    color: $hover-color;
+    text-decoration: $underLine;
+  }
+}
+
+
+//-----------------------------------16.按钮样式-----------------------------------------
+@mixin button($width:80px, $height:28px, $background-color:#409EFF, $color:#fff, $border:null, $display:inline-block){
+  display: $display;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  background-color: rgba($background-color, 1);
+  border: $border;
+  color: $color;
+  text-align: center;
+  &:hover{
+    background-color: rgba($background-color, .8);
+    color: $color;
+  }
+}
+
+
+//-----------------------------------17.calc计算-----------------------------------------
+@mixin calc($main:100%, $minus:null, $operator: null, $obj:width){
+  @if($operator == null){
+    #{$obj}: calc( #{$main} - #{$minus});
+  }
+  @else if($operator == '+'){
+    #{$obj}: calc( #{$main} + #{$minus});
+  }
+  @else if($operator == '*'){
+    #{$obj}: calc( #{$main} * #{$minus});
+  }
+  @else if($operator == '/'){
+    #{$obj}: calc( #{$main} / #{$minus});
+  }
+}
+
+
+//-----------------------------------18.position 定位-----------------------------------------
+@mixin position($top:null, $right:null, $bottom:null, $left:null, $position:absolute){
+  position: $position;
+  top:$top; right:$right; bottom:$bottom; left:$left;
+}
