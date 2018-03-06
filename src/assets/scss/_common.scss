@@ -57,9 +57,17 @@
     height: 50%;
     background-color: #ffffff69;
     margin: 0 auto;
+    img{
+      @include radius(1234, 50%);
+      @include opacity(0.7);
+      width: 8rem;
+      height: 8rem;
+      margin: 10px auto 0;
+      display: block;
+    }
   }
   .login-main-footer{
-    @include font-adjust(1.4rem, 1.5);
+    @include font-adjust(1.4rem, 1.5rem, #fff);
     background-color: #ffffff0a;
     width: 100%;
     padding: 0.5rem;
@@ -67,6 +75,13 @@
     display: -webkit-flex;
     flex-direction: row;
     justify-content: space-between;
+    a{
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+    }
   }
 }
 .login-main-form{
