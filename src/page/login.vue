@@ -15,7 +15,7 @@
         <mu-raised-button label="登陆" class="" backgroundColor="rgb(75, 150, 44)" />
       </div>
       <div class="login-main-footer">
-        <mu-flat-button label="忘记密码" class="demo-flat-button" icon="android" color="#fff"/>
+        <mu-flat-button label="忘记密码" iconClass="iconfont icon-help" icon=" " color="#fff"/>
         <a href="#">注册</a>
       </div>
     </div>

@@ -1,22 +1,20 @@
 <template>
 
-	<div class="index">
+  <div class="header">
 
-	</div>
+  </div>
 
 </template>
-
 <script type="text/ecmascript-6">
-	export default {
-		name: '',
-		data() {
-			return {
+  export default {
+    name: 'Header',
+    data(){
+      return{
 
-			}
-		}
-	}
+      }
+    }
+  }
 </script>
-
 <style lang="scss" type="text/scss" scoped>
   @import "~@/assets/scss/common";
 </style>
