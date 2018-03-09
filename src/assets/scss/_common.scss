@@ -20,16 +20,21 @@
 @import "./mixin.scss";
 
 
+/*  3.COMMON VARIABLE  ***********************************************************************************************/
+$header-height:5.6rem;
+$footer-height:5.6rem;
+
+
 /*  2.EXTEND STYLE  **************************************************************************************************/
 
-
-
-/*  3.COMMON VARIABLE  ***********************************************************************************************/
 
 
 
 /*  4.Header Panel     ***********************************************************************************************/
 .header{
+  @include position(0, 0, null, 0, fixed);
+  height: $header-height;
+  width: 100%;
   .left-content{
     border-bottom: 2px solid transparent;
     &.active{border-color: #fff}
@@ -41,6 +46,7 @@
 /*  5.Footer Panel     ***********************************************************************************************/
 .footer{
   @include position(null, 0, 0, 0, fixed);
+  height: $footer-height;
 }
 
 
@@ -52,7 +58,7 @@
 .login-bg{
   @include position(0, 0, 0, 0);
   @include opacity(0.7);
-  background: url("~@/assets/img/login-bg.jpg") no-repeat center center;
+  background: url("/static/img/login-bg.jpg") no-repeat center center;
 }
 .login-main{
   position: relative;
@@ -111,13 +117,17 @@
 
 /*  7.INDEX PAGE  ****************************************************************************************************/
 .index{
-
+  padding-top: $header-height; padding-bottom: $footer-height;
   .works{
     @include font-adjust(1.2rem, 1.2, #666, left);
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
     justify-content: flex-start;
+  }
+  .list-title_text-limit{
+    @include text-hide();
+    width: 80%;
   }
 }
 

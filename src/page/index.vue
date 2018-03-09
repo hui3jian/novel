@@ -10,8 +10,8 @@
 
 <script type="text/ecmascript-6">
 
-  import JzHeader from '@/components/header'
-  import JzFooter from '@/components/footer'
+  import JzHeader from '@/components/common/header'
+  import JzFooter from '@/components/common/footer'
 
 
 	export default {

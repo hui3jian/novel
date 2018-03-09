@@ -1,7 +1,7 @@
 <template>
 
   <div class="header">
-    <mu-appbar>
+    <mu-appbar style="height: 100%">
       <mu-flat-button
         color="white"
         label="作品"

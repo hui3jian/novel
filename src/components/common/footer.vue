@@ -1,7 +1,7 @@
 <template>
 
 	<div class="footer">
-    <mu-paper>
+    <mu-paper style="height: 100%">
       <mu-bottom-nav :value="bottomNav" shift @change="handleChange">
         <mu-bottom-nav-item value="movies" title="书架" icon="local_library"/>
         <mu-bottom-nav-item value="music" title="推荐" icon="thumb_up"/>

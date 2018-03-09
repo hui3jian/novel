@@ -33,7 +33,6 @@ table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 .clear {*zoom: 1;}
 
 
-html, body{font-size: 10px;}
 .padding0{padding: 0!important;}
 .pdt0{padding-top: 0!important;}
 .pdl0{padding-left: 0!important;}
@@ -44,3 +43,34 @@ html, body{font-size: 10px;}
 .mgl0{margin-left: 0!important;}
 .mgr0{margin-right: 0!important;}
 .mgb0{margin-bottom: 0!important;}
+
+
+html {
+  font-size : 10px;
+}
+@media only screen and (min-width: 401px){
+  html {
+    font-size: 12px !important;
+  }
+}
+@media only screen and (min-width: 428px){
+  html {
+    font-size: 13px !important;
+  }
+}
+@media only screen and (min-width: 481px){
+  html {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (min-width: 569px){
+  html {
+    font-size: 17px !important;
+  }
+}
+@media only screen and (min-width: 641px){
+  html {
+    font-size: 20px !important;
+  }
+}
+

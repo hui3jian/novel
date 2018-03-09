@@ -8,7 +8,7 @@
         <span class="right">切换账号</span>
       </h2>
       <div class="login-main-form">
-        <img src="~@/assets/img/login-user.jpg" alt="">
+        <img src="/static/img/login-user.jpg" alt="">
         <mu-text-field label="账号" hintText="请输入账号" type="text" labelFloat/><br/>
         <mu-text-field label="密码" hintText="请输入密码" type="password"  labelFloat/><br/>
 
