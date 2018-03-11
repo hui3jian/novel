@@ -56,7 +56,6 @@
   justify-content: flex-start;
   align-items: stretch;
   padding: 0.8rem 0;
-  margin: 0 0 0 1rem;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
@@ -98,6 +97,7 @@
 .jz-list-item_right_describe{
   font-size: 1.2rem;
   color: #666;
+  line-height: 1.5;
 }
 .jz-list-item_operating{
   display: flex;

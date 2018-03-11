@@ -13,6 +13,8 @@
  *  5.  Footer Panel
  *  6.  LOGIN PAGE
  *  7.  INDEX PAGE
+ *  8.  SEARCH PAGE
+ *  9.  ATTENTION PAGE
  *
  */
 
@@ -31,8 +33,10 @@ $footer-height:5.6rem;
 
 
 /*  4.Header Panel     ***********************************************************************************************/
+$header-z-index:99;
 .header{
   @include position(0, 0, null, 0, fixed);
+  z-index: $header-z-index;
   height: $header-height;
   width: 100%;
   .left-content{
@@ -44,9 +48,10 @@ $footer-height:5.6rem;
 
 
 /*  5.Footer Panel     ***********************************************************************************************/
+$footer-z-index:98;
 .footer{
   @include position(null, 0, 0, 0, fixed);
-  height: $footer-height;
+  z-index: $footer-z-index;
 }
 
 
@@ -110,24 +115,190 @@ $footer-height:5.6rem;
     }
   }
 }
-.login-main-form{
-
-}
 
 
 /*  7.INDEX PAGE  ****************************************************************************************************/
+$index-left-space:1rem;
 .index{
   padding-top: $header-height; padding-bottom: $footer-height;
   .works{
     @include font-adjust(1.2rem, 1.2, #666, left);
+    background-color: #fff;
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
     justify-content: flex-start;
+    padding-left: $index-left-space;
   }
   .list-title_text-limit{
     @include text-hide();
     width: 80%;
   }
+
+  .attention{
+    margin-bottom: 1rem;
+    ul {
+      height: 5rem;
+      padding: 1rem 0;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: #fff;
+      margin-bottom: 1rem;
+    }
+    li{
+      width: 50%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:nth-child(1){
+        border-right: 1px solid #eee;
+        i{color: #0080c1}
+      }
+      &:nth-child(2){
+        i{color: #6dbd64}
+      }
+    }
+    .main{
+      background-color: #fff;
+      text-align: left;
+      img{width: 100%}
+      span{
+        @include opacity(0.8);
+        color: #fff;
+      }
+    }
+  }
+}
+.index-bottom-sheet{
+  .top{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: url("/static/img/index-bottom-sheet-top-bg.jpg");
+    img{
+      width: 4rem;
+      height: 5rem;
+      margin:-1rem $index-left-space 0;
+    }
+    span{
+      @include font-adjust(1.4rem, null, rgba(238, 239, 238, 0.9215686274509803), null);
+    }
+  }
+  .center{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    img{
+      @include radius(1234, 50%)
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      margin:1.5rem $index-left-space 0.5rem;
+    }
+    dt{
+      @include font-adjust(1.2rem, 2.2, #333, null, 700);
+    }
+    dd{
+      @include font-adjust(1.2rem, 1.2, #999, null);
+    }
+    a{@include a-style($underLine:none)}
+  }
+  .bottom{
+    padding:0 $index-left-space;
+    h2{
+      @include font-adjust(1.2rem, 1.5, #333, null, 100);
+      padding: 0.5rem 0;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    div{
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      span{
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        &:hover,
+        &:focus{
+          background-color: #f5f5f5;
+          color: #009688;
+        }
+      }
+    }
+  }
 }
 
+
+/*  8.SEARCH PAGE  ****************************************************************************************************/
+.search{
+
+}
+.search-header-right{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-main{
+  dl{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    &:last-child{
+      border: none;
+    }
+  }
+  dt{
+    @include font-adjust(1.2rem, 1.5, #333, left);
+    padding: 0.5rem 0;
+  }
+  dd{
+    padding: 0.5rem 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: space-between;
+    div{margin-bottom: 0.5rem; margin-right: 0.5rem}
+  }
+}
+
+
+/*  8.ATTENTION PAGE  ****************************************************************************************************/
+$attention-left-space:1rem;
+.attention{
+  .go-book-list{
+    @include button(null, $background-color:#fff, $color:#009688);
+    @include radius(1234, 1.3rem);
+    padding: 0 1rem; border: 1px solid #009688;
+  }
+}
+.attention-main{
+  h4{
+    @include font-adjust(1.2rem, 2.5, #999, left);
+    padding-left: $attention-left-space;
+    background-color: #e6e5e5;
+  }
+  & > div{
+    padding-left: $attention-left-space;
+    margin-bottom: 1.5rem;
+  }
+}
