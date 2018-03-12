@@ -197,7 +197,7 @@ $index-left-space:1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
     img{
-      @include radius(1234, 50%)
+      @include radius(1234, 50%);
       display: block;
       width: 4rem;
       height: 4rem;

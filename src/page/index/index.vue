@@ -90,12 +90,16 @@
     <div class="attention" v-else>
       <ul class="top">
         <li>
-          <i class="iconfont icon-zaixianzhidao"></i>
-          <span>我的书单</span>
+          <router-link to="/attention/list">
+            <i class="iconfont icon-zaixianzhidao"></i>
+            <span>我的书单</span>
+          </router-link>
         </li>
         <li>
-          <i class="iconfont icon-quanbu"></i>
-          <span>我的专栏</span>
+          <router-link to="{path: 'attention', query:{action: 'columns'}">
+            <i class="iconfont icon-quanbu"></i>
+            <span>我的专栏</span>
+          </router-link>
         </li>
       </ul>
       <div class="main" >

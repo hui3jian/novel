@@ -12,28 +12,55 @@
       </mu-appbar>
     </div>
     <div class="attention-main">
-      <h4>关注的书单</h4>
-      <div>
-        <jz-list>
-          <jz-list-item>
-            <template slot="left">
-              <img src="/static/img/book_bg_linshi.jpg" alt="" >
-            </template>
-            <template slot="title"><span class="list-title_text-limit">完美世界</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
-            <template slot="describe">
-              创建人：辰东<br/>
-              62本小说 ·  6859关注
-            </template>
-            <template slot="operating">
-              <mu-icon-button icon="clear"/>
-            </template>
-          </jz-list-item>
-        </jz-list>
-      </div>
-      <mu-chip class="demo-chip" backgroundColor="#009688" color="#fff">
-        去书单广场看看
-      </mu-chip>
+      <template v-if="bookListOpen">
+        <h4>关注的书单</h4>
+        <div>
+          <jz-list>
+            <jz-list-item>
+              <template slot="left">
+                <img src="/static/img/book_bg_linshi.jpg" alt="" >
+              </template>
+              <template slot="title"><span class="list-title_text-limit">完美世界</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
+              <template slot="describe">
+                创建人：辰东<br/>
+                62本小说 ·  6859关注
+              </template>
+              <template slot="operating">
+                <mu-icon-button icon="clear"/>
+              </template>
+            </jz-list-item>
+          </jz-list>
+        </div>
+        <mu-chip class="demo-chip" backgroundColor="#009688" color="#fff">
+          去书单广场看看
+        </mu-chip>
+      </template>
+
+      <template v-else>
+        <h4>收藏的专栏</h4>
+        <div>
+          <jz-list>
+            <jz-list-item>
+              <template slot="left">
+                <img src="/static/img/book_bg_linshi.jpg" alt="" >
+              </template>
+              <template slot="title"><span class="list-title_text-limit">完美世界</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
+              <template slot="describe">
+                创建人：辰东<br/>
+                62本小说 ·  6859关注
+              </template>
+              <template slot="operating">
+                <mu-icon-button icon="clear"/>
+              </template>
+            </jz-list-item>
+          </jz-list>
+        </div>
+        <mu-chip class="demo-chip" backgroundColor="#009688" color="#fff">
+          去专栏广场看看
+        </mu-chip>
+      </template>
     </div>
+
   </div>
 </template>
 <script type="text/ecmascript-6">
@@ -41,6 +68,17 @@
   import List     from '@/components/list'
 
   Vue.use(List);
+
+  export default {
+    data(){
+      return{
+        bookListOpen: true
+      }
+    },
+    mounted(){
+
+    }
+  }
 </script>
 <style lang="scss" type="text/scss" scoped>
   @import "~@/assets/scss/common";
