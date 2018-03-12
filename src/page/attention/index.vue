@@ -26,7 +26,7 @@
                 62本小说 ·  6859关注
               </template>
               <template slot="operating">
-                <mu-icon-button icon="clear"/>
+                <mu-icon-button icon="favorite" iconClass="color-red"/>
               </template>
             </jz-list-item>
           </jz-list>
@@ -44,13 +44,19 @@
               <template slot="left">
                 <img src="/static/img/book_bg_linshi.jpg" alt="" >
               </template>
-              <template slot="title"><span class="list-title_text-limit">完美世界</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
+              <template slot="title">
+                <span class="list-title_text-limit">
+                  #砸书评# 芭蕾清梦 @ 花样书评
+                </span>
+              </template>
               <template slot="describe">
-                创建人：辰东<br/>
-                62本小说 ·  6859关注
+                我知道不小部分的语文老师批改作文，主要是看题目、结尾，只要看一句就能懂得
+                学生想表达...
+                <br/>
+                留无邪·155赞
               </template>
               <template slot="operating">
-                <mu-icon-button icon="clear"/>
+                <mu-icon-button icon="favorite" iconClass="color-red"/>
               </template>
             </jz-list-item>
           </jz-list>
@@ -72,12 +78,12 @@
   export default {
     data(){
       return{
-        bookListOpen: true
+        bookListOpen: false
       }
     },
     mounted(){
-
-    }
+      this.bookListOpen = this.$route.query.active == 'list' ?  true : false;
+    },
   }
 </script>
 <style lang="scss" type="text/scss" scoped>

@@ -154,12 +154,11 @@ $index-left-space:1rem;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      &:nth-child(1){
-        border-right: 1px solid #eee;
-        i{color: #0080c1}
+      span{
+        color: #333;display: block;
       }
-      &:nth-child(2){
-        i{color: #6dbd64}
+      i{
+        color: #009688;
       }
     }
     .main{
@@ -285,6 +284,7 @@ $index-left-space:1rem;
 /*  8.ATTENTION PAGE  ****************************************************************************************************/
 $attention-left-space:1rem;
 .attention{
+
   .go-book-list{
     @include button(null, $background-color:#fff, $color:#009688);
     @include radius(1234, 1.3rem);

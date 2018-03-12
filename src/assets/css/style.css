@@ -18,7 +18,7 @@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正�
 ul, ol { list-style: none; }
 
 /** 重置文本格式元素 **/
-a { text-decoration: none; cursor: pointer}
+a { text-decoration: none; cursor: pointer; color: #009688}
 
 /** 重置表单元素 **/
 legend { color: #000; } /* for ie6 */
@@ -44,11 +44,14 @@ table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 .mgr0{margin-right: 0!important;}
 .mgb0{margin-bottom: 0!important;}
 
+.color-red{color: #cc575c}
+
 body{background: #f5f5f5}
 
 html {
   font-size : 10px;
 }
+
 @media only screen and (min-width: 401px){
   html {
     font-size: 12px !important;
@@ -81,3 +84,4 @@ html {
   background-color:rgba(0, 0, 0, 0.22)
 }
 #app .mu-text-field-focus-line.focus{background-color: #ffffffb0}
+

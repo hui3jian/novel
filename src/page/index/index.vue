@@ -90,13 +90,13 @@
     <div class="attention" v-else>
       <ul class="top">
         <li>
-          <router-link to="/attention/list">
+          <router-link :to="{ path: 'attention', query: {active: 'list'} }">
             <i class="iconfont icon-zaixianzhidao"></i>
             <span>我的书单</span>
           </router-link>
         </li>
         <li>
-          <router-link to="{path: 'attention', query:{action: 'columns'}">
+          <router-link :to="{ path: 'attention', query: {active: 'columns'} }">
             <i class="iconfont icon-quanbu"></i>
             <span>我的专栏</span>
           </router-link>
@@ -169,6 +169,7 @@
         }]
       }
     },
+
     methods: {
       closeBottomSheet () {
         this.bottomSheet = false
