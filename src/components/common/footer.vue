@@ -18,8 +18,19 @@
     data () {
       return {
         bottomNav: 'movies',
-        bottomNavColor: 'movies'
+        bottomNavColor: 'movies',
+        homeOpen:true,
+        recommendOpen:false,
+        squareOpen:false,
+        userOpen:false,
       }
+    },
+    mounted(){
+      var nowUrl = this.$route.path;
+      if(nowUrl.indexOf('home') >= 0) this.homeOpen = true;
+      if(nowUrl.indexOf('recommend') >= 0) this.homeOpen = true;
+      if(nowUrl.indexOf('square') >= 0) this.homeOpen = true;
+      if(nowUrl.indexOf('user') >= 0) this.homeOpen = true;
     },
     methods: {
       handleChange (val) {
