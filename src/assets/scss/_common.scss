@@ -43,6 +43,16 @@ $header-z-index:99;
     border-bottom: 2px solid transparent;
     &.active{border-color: #fff}
   }
+  .recommend-header_left-icon{
+    color: #fff;
+  }
+  .recommend-header_left-label{
+    color: #fff
+  }
+  .recommend-header_left-underLine{
+    background-color: rgba(216, 198, 198, 0.48);
+    bottom: 5px;
+  }
 }
 
 

@@ -5,21 +5,25 @@
       <mu-bottom-nav :value="bottomNav" shift @change="handleChange">
         <mu-bottom-nav-item
         value="movies"
+        activeClass="mu-bottom-item-active"
         to='/home'
         title="书架"
         icon="local_library"/>
         <mu-bottom-nav-item
         value="music"
+        activeClass="mu-bottom-item-active"
         to="/recommend"
         title="推荐"
         icon="thumb_up"/>
         <mu-bottom-nav-item
         value="books"
+        activeClass="mu-bottom-item-active"
         to="/square"
         title="书圈"
         icon="stars"/>
         <mu-bottom-nav-item
         value="pictures"
+        activeClass="mu-bottom-item-active"
         to="/user"
         title="用户"
         icon="person"/>
@@ -33,12 +37,7 @@
   export default {
     data () {
       return {
-        bottomNav: 'movies',
-        bottomNavColor: 'movies',
-        // homeOpen:false,
-        // recommendOpen:false,
-        // squareOpen:false,
-        // userOpen:false,
+        bottomNav: '',
       }
     },
     mounted(){
