@@ -15,6 +15,7 @@
  *  7.  INDEX PAGE
  *  8.  SEARCH PAGE
  *  9.  ATTENTION PAGE
+ *  10. RCM PAGE
  *
  */
 
@@ -291,10 +292,9 @@ $index-left-space:1rem;
 }
 
 
-/*  8.ATTENTION PAGE  ****************************************************************************************************/
+/*  9.ATTENTION PAGE  ****************************************************************************************************/
 $attention-left-space:1rem;
 .attention{
-
   .go-book-list{
     @include button(null, $background-color:#fff, $color:#009688);
     @include radius(1234, 1.3rem);
@@ -311,4 +311,74 @@ $attention-left-space:1rem;
     padding-left: $attention-left-space;
     margin-bottom: 1.5rem;
   }
+}
+
+
+/*  10.RCM PAGE  ****************************************************************************************************/
+.rcm{
+  padding-top: $header-height;
+
+  .swiper{
+    width: 100%; height: 150px;
+    img{width: 100%; height: 100%; overflow: hidden}
+    .swiper-pagination{
+      bottom: 2px;
+    }
+    .swiper-bullet{
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 100%;
+      background: #000;
+      opacity: 0.2;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+    .swiper-bullet-active{
+      opacity: 1;
+      background: #009688;
+    }
+  }
+
+  .sort{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    .icon{font-size: 3rem}
+  }
+
+  .msg{
+    @include font-adjust(1.2rem, null, #666, left);
+    @include text-hide();
+    @include radius(1234, 1rem);
+    margin: 0 1rem 2rem;
+    padding: 0.5rem;
+    background-color: #eee;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    span{margin-right: 0.5rem}
+    .icon{font-size: 2rem}
+  }
+
+  .cont{
+    h2{
+      @include font-adjust(1.3rem, 1.5rem, #333, left);
+      border-left: 2px solid #009688;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 1.5rem;
+      margin: 0 1rem;
+      padding-left: 0.5rem;
+    }
+  }
+
 }

@@ -6,13 +6,19 @@ import router   from  './router'
 import MuseUi   from  'muse-ui'
 import store    from  './store'
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.css'
 import "@/assets/iconfont/iconfont.css"
 import '@/assets/css/style.css'
 import '@/assets/css/animate.min.css'
+import 'swiper/dist/css/swiper.css'
+import "@/assets/iconfont/iconfont.js"
+
 
 Vue.use(MuseUi);
+Vue.use(VueAwesomeSwiper);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
