@@ -51,12 +51,16 @@
 
     <!-- 广场页头部 -->
     <template v-if="squareOpen">
-
+      <mu-appbar title="书友圈"  style="height: 100%;text-align: left"></mu-appbar>
     </template>
 
     <!-- 用户页头部 -->
     <template v-if="userOpen">
-
+      <mu-appbar title="ZoeyChoi"  style="height: 100%;text-align: left">
+        <mu-badge content="12"  slot="right" badgeClass="header-badge" circle secondary>
+          <mu-icon-button icon="mail_outline" to=""/>
+        </mu-badge>
+      </mu-appbar>
     </template>
 
   </div>

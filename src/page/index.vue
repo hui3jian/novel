@@ -1,6 +1,6 @@
 <template>
 
-	<div class="">
+	<div class="main-content" :style="{'minHeight': screenHeight + 'px'}">
     <jz-header></jz-header>
     <router-view/>
     <jz-footer></jz-footer>
@@ -18,9 +18,12 @@
 		name: '',
 		data() {
 			return {
-
+        screenHeight: ''
 			}
 		},
+    mounted(){
+		  this.screenHeight = window.screen.height;
+    },
     components:{
       JzHeader,JzFooter
     }
@@ -29,4 +32,8 @@
 
 <style lang="scss" type="text/scss" scoped>
   @import "~@/assets/scss/common";
+  .main-content{
+    background-color: #eee;
+    padding-bottom: 6rem;
+  }
 </style>
