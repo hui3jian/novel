@@ -14,16 +14,16 @@ db.once('open',  () => console.log('Mongo connection successed'));
 
 /*
  * 定义模式 loginSchema
- *
 */
-const loginSchema = new mongoose.Schema(schema.loginSchema);
+const loginSchema         =   new mongoose.Schema(schema.user.loginSchema);
+const novelListSchema     =   new mongoose.Schema(schema.novel.novelListSchema);
 
 /*
  * 定义模型 Model
- *
 */
 const Models = {
-  Login : mongoose.model('Login', loginSchema)
+  Login : mongoose.model('Login', loginSchema),
+  novellist: mongoose.model('novellist', novelListSchema)
 }
 
 module.exports = Models;
