@@ -11,7 +11,7 @@ const router    = express.Router();
 
 // 首页列表接口
 router.get('/api/index/list', (req, res) => {
-  models.novellist.find( (err, data) => {
+  models.NovelList.find( (err, data) => {
     if (err) {
       res.send(err);
     }
