@@ -29,11 +29,11 @@ app.get('*', function (req, res) {
 });
 
 // 手动添加虚拟数据
-const _data = require('./add_data');
-_data();
+// const _data = require('./add_data');
+// _data();
 
 
 // 监听8088端口
-app.listen(8088);
-console.log('success listen 8088 and ...');
+app.listen(8082);
+console.log('success listen 8082 and ...');
 

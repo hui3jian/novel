@@ -31,7 +31,7 @@ const _schema = {
       title:           { type: String },
       novel_id:        { type: Number, unique: true },
       content_id:      { type: Number },
-      author_id:       { type: ObjectId, ref: 'author' },
+      author_id:       { type: ObjectId, ref: 'novel_Author' },
       sort:            { type: String },
       topic_sort:      { type: String },
       img:             { type: String },
@@ -77,7 +77,7 @@ const _schema = {
     },
     novelSortSchema: {
       id:              { type: Number, unique: true },
-      name:            { type: String },
+      name:            { type: String, unique: true },
       create_at:       { type: Date, default: Date.now },
       is_del:          { type: Boolean, default: 'false' },
     },
@@ -88,7 +88,7 @@ const _schema = {
 
     topicSortSchema:{
       id:              { type: Number, unique: true },
-      name:            { type: String },
+      name:            { type: String, unique: true  },
       create_at:       { type: Date, default: Date.now },
       is_del:          { type: Boolean, default: 'false' },
     }
@@ -101,7 +101,7 @@ const _schema = {
   honor:{
     honorSortSchema:{
       id:              { type: Number, unique: true },
-      name:            { type: String },
+      name:            { type: String, unique: true  },
       has_count:       { type: Number },
       create_at:       { type: Date, default: Date.now },
       is_del:          { type: Boolean, default: 'false' },

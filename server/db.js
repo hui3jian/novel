@@ -35,6 +35,16 @@ const honorSortSchema        =   new Schema(_schema.honor.honorSortSchema);
 
 
 /*
+ * schema populate
+ */
+// novelMainSchema.static = {
+//   findAuthodID: function () {
+//
+//   }
+// }
+
+
+/*
  * 定义模型 Model
  */
 const Models = {
