@@ -48,7 +48,7 @@ const honorSortSchema        =   new Schema(_schema.honor.honorSortSchema);
  * 定义模型 Model
  */
 const Models = {
-  Login         :   mongoose.model('Login', loginSchema),
+  // Login         :   mongoose.model('Login', loginSchema),
 
   NovelMain     :   mongoose.model('novel_Main', novelMainSchema),
   NovelContent  :   mongoose.model('novel_Content', novelContentSchema),

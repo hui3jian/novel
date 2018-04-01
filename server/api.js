@@ -10,20 +10,14 @@ const router    = express.Router();
 */
 
 // 首页列表接口
-// router.get('/api/index/list', (req, res) => {
-//   models.NovelMain.find( (err, data) => {
-//     if (err) {
-//       res.send(err);
-//     }
-//     else{
-//       res.send(data);
-//     }
-//   });
-// });
 router.get('/api/index/list', (req, res) => {
   models.NovelMain.find().populate({
     path: "author_id",
     select: 'name',
+    populate: {
+      path: "new_chapter_at",
+      // match:{$max:"update_at"}
+    }
   }).exec(function (err, data) {
       if (err){
         res.send(err);

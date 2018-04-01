@@ -1,33 +1,33 @@
 <template>
 
-	<div class="index">
+  <div class="index">
 
     <!-- 作品 -->
     <div class="works" v-if="$store.state.page.isOpenWorks">
       <jz-list>
-        <jz-list-item>
+        <jz-list-item v-for="item in list">
           <template slot="left">
-            <img src="/static/img/book_bg_linshi.jpg" alt="" >
+            <img :src="item.img" alt="" >
           </template>
-          <template slot="title"><span class="list-title_text-limit">完美世界</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
+          <template slot="title"><span class="list-title_text-limit">{{ item.title }}</span>  <mu-badge content="2小时前更新" color="#f04048" :primary="true"/></template>
           <template slot="describe">
-            辰东 著 | 1057章未读 <br/>
+            {{ item.author_id.name }} 著 | 1057章未读 <br/>
             连载至：第一千零五十七章 完美世界
           </template>
           <template slot="operating">
             <mu-icon-button icon="more_vert" @click="openBottomSheet" />
             <mu-bottom-sheet :open="bottomSheet" @close="closeBottomSheet" sheetClass="index-bottom-sheet">
               <div class="top">
-                <img src="/static/img/book_bg_linshi.jpg" alt="">
+                <img :src="item.img" alt="">
                 <span>
-                  完美世界
+                  {{ item.title }}
                   <router-link>详情</router-link>
                 </span>
               </div>
               <div class="center">
                 <img src="/static/img/login-user.jpg" alt="">
                 <dl>
-                  <dt>Zoey</dt>
+                  <dt> {{ item.author_id.name }}</dt>
                   <dd>当前粉丝值：120万</dd>
                   <dd><a>成为他的学徒</a> <i class="iconfont icon-help"></i></dd>
                 </dl>
@@ -104,7 +104,7 @@
       </ul>
       <div class="main" >
         <mu-grid-list>
-          <mu-grid-tile v-for="tile,index in list" :key="'tile' + index" titlePosition="top" actionPosition="left" :rows="tile.featured ? 2 : 1" :cols="tile.featured ? 2 : 1">
+          <mu-grid-tile v-for="tile,index in att_list" :key="'tile' + index" titlePosition="top" actionPosition="left" :rows="tile.featured ? 2 : 1" :cols="tile.featured ? 2 : 1">
             <img :src="tile.image"/>
             <span slot="title">{{tile.title}}</span>
             <span slot="subTitle">by <b>{{tile.author}}</b></span>
@@ -114,7 +114,7 @@
       </div>
     </div>
 
-	</div>
+  </div>
 
 </template>
 
@@ -125,14 +125,14 @@
 
   Vue.use(List);
 
-	export default {
-		name: '',
+  export default {
+    name: '',
     data () {
       return {
         bottomSheet: false,
         bottomNav: 'recents',
-
-        list: [{
+        list: '',
+        att_list: [{
           image: '/static/img/linshi/img01.jpg',
           title: '冰山王子专宠野蛮丫头',
           author: '',
@@ -170,6 +170,10 @@
       }
     },
 
+    mounted(){
+      this.indexMainList();
+    },
+
     methods: {
       closeBottomSheet () {
         this.bottomSheet = false
@@ -179,9 +183,25 @@
       },
       handleChange (val) {
         this.bottomNav = val
+      },
+      indexMainList(){
+        this.$http.get('/api/index/list').then(
+          (response) => {
+//          console.log(response);
+            this.list = response.data;
+            console.log(this.list);
+          },
+          (err) => {
+            console.log(err);
+          })
+          .catch((mst) => {
+            console.log(mst);
+          }
+        );
+
       }
     }
-	}
+  }
 </script>
 
 <style lang="scss" type="text/scss" scoped>

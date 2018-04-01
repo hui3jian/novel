@@ -29,7 +29,6 @@ const addFictitiousData = function () {
   let NovelMain = new db.NovelMain({
     novel_id:           1,
     title:              '禁锢之手',
-    content_id:         1,
     author_id:          NovelAuthor._id,
     sort:               '2',
     topic_sort:         '2',

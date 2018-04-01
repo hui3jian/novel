@@ -7,6 +7,7 @@ import MuseUi   from  'muse-ui'
 import store    from  './store'
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueResource from 'vue-resource'
 
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.css'
@@ -19,6 +20,7 @@ import "@/assets/iconfont/iconfont.js"
 
 Vue.use(MuseUi);
 Vue.use(VueAwesomeSwiper);
+Vue.use(VueResource);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

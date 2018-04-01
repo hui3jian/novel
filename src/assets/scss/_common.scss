@@ -185,7 +185,7 @@ $index-left-space:1rem;
       text-align: left;
       img{width: 100%}
       span{
-        @include opacity(0.8);
+        @include opacity(1);
         color: #fff;
       }
     }

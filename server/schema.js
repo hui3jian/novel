@@ -30,7 +30,7 @@ const _schema = {
     novelMainSchema: {
       title:           { type: String },
       novel_id:        { type: Number, unique: true },
-      content_id:      { type: Number },
+      content_id:      { type: ObjectId, ref: 'novel_Content' },
       author_id:       { type: ObjectId, ref: 'novel_Author' },
       sort:            { type: String },
       topic_sort:      { type: String },
@@ -44,7 +44,7 @@ const _schema = {
       week_ticket:     { type: Number, default: 0 },
       mon_ticket:      { type: Number, default: 0 },
       all_ticket:      { type: Number, default: 0 },
-      new_chapter_at:  { type: Date, default: Date.now },
+      new_chapter_at:  { type: ObjectId, ref: 'novel_Content' },
       is_finished:     { type: Boolean, default: 'false' },
       is_del:          { type: Boolean, default: 'false' },
       is_free:         { type: Boolean, default: 'false' },
@@ -57,7 +57,7 @@ const _schema = {
       content_is_html: { type: Boolean, default: 'false' }
     },
     novelContentSchema: {
-      novel_id:        { type: ObjectId, ref: 'novelMainSchema' },
+      novel_id:        { type: ObjectId, ref: 'novel_Main' },
       chapter_number:  { type: Number, default: 0 },
       chapter_title:   { type: String },
       novel_content:   { type: String },
