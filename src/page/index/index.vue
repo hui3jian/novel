@@ -5,7 +5,7 @@
     <!-- 作品 -->
     <div class="works" v-if="$store.state.page.isOpenWorks">
       <jz-list>
-        <jz-list-item v-for="item in list">
+        <jz-list-item v-for="(item, key) in list" :key="key">
           <template slot="left">
             <img :src="item.img" alt="" >
           </template>
@@ -187,9 +187,7 @@
       indexMainList(){
         this.$http.get('/api/index/list').then(
           (response) => {
-//          console.log(response);
             this.list = response.data;
-            console.log(this.list);
           },
           (err) => {
             console.log(err);
